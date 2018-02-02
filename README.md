@@ -24,3 +24,9 @@ All compiled files will compile within the app/css directory, under the same fil
 
 ## Gulpfile.js
 Gulpfile has not been modified much. Practically on line 1 you are offered an array of SCSS files to compile and that is all there is to it.# chat
+
+## How to use CHAT
+
+- First add the Girl with 'ADD TO FRIEND BUTTON'
+- Let's chat with Sophie
+- Try to speak with her...(One suggest, write 'Bien') :)

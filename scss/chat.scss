@@ -1,0 +1,154 @@
+.chat-container {
+    width: 90vw;
+    display:block;
+    margin:0 auto;
+    height: 55vh;
+    overflow: scroll;
+    margin-top: 210px;
+
+    &.keyBoardOpen {
+        height: 15vh; 
+    }
+
+    .message-container {
+        display:inline-block;
+        margin: 30px 0;
+        width: 100%;
+        .avatar-container {
+            position:relative;
+            .flag {
+                width:40px;
+                height:40px;
+                background-color:#76bb5a;
+                border-radius:50px;
+                display:block;
+                position:absolute;
+                bottom:0;
+                right:20px;
+            }
+            .avatar {
+                width:20vw;
+                height:20vw;
+                border-radius:100px;
+                display: block;
+                overflow: hidden;
+                position:relative;
+                .flag {
+                    position:absolute;
+                    width:20px;
+                    height:20px;
+                    border-radius: 50px;
+                    background-color: green;
+                }
+                img {
+                    min-width: 100%;
+                    min-height: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+        .message-text-container {
+            width:60vw;
+            display:block;
+            border-radius: 5px;
+            padding: 40px;
+            position:relative;
+
+            .text {
+                z-index:2;
+                font-size: 40px;
+            }
+        }
+        &.you {
+            .avatar-container {
+                float:right;
+            }
+            .message-text-container {
+                background-color:#59bbe0;
+                float:left;
+                color:#fff;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: -10px;
+                    top: -10px;
+                    border-top: 40px solid transparent;
+                    border-bottom: 40px solid transparent;
+                    border-left: 60px solid #59bbe0;
+                    transform: rotate(90deg);
+                    z-index:-1;
+                }
+            }
+        }
+
+        &.me {
+            .avatar-container {
+                float:left;
+            }
+            .message-text-container {
+                background-color:#fff;
+                float:right;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: -10px;
+                    top: -10px;
+                    border-top: 40px solid transparent;
+                    border-bottom: 40px solid transparent;
+                    border-left: 60px solid #fff;
+                    transform: rotate(90deg);
+                    z-index:-1;
+                }
+            }
+        }
+    }
+}
+
+.send-messages-container {
+    position: fixed;
+    bottom: 0;
+    min-height: 150px;
+    width: 100%;
+    padding-left: 5vw;
+    background-color:#edebec;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 40px;
+        top: -10px;
+        border-top: 40px solid transparent;
+        border-bottom: 40px solid transparent;
+        border-left: 60px solid #fff;
+        transform: rotate(90deg);
+        z-index:-1;
+    }
+    .send-messages {
+        width:85vw;
+        background-color:#fff;
+        height: 130px;
+        outline:none;
+        padding-left: 40px;
+        font-size: 40px;
+        position: fixed;
+        border:none;
+
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #a2a2a2;
+            opacity: 1; /* Firefox */
+        }
+        
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #a2a2a2;
+        }
+        
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: #a2a2a2;
+        }
+    }
+}

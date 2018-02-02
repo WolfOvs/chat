@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Profile page</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/accordion.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body>
-	<div id="container-grid">
-		
-	<div class="column-12">
-		<div>
-			<input type="text"/>
-		</div>
-		<div id="content"></div>
+	<div class="header-container">
+		<h1>Sophie</h1>
 	</div>
-		
-	</div>	
+	<a onclick="goToChatPage()" class="profile-container">
+		<div class="img-profile">
+			<img src="images/sophie.jpg"/>
+			<i class="fa fa-heart faa-pulse animated fa-4x"></i>
+		</div>
+		<div class="online-flag">
+			ONLINE
+		</div>
+	</a>
+	<div class="description-container">
+		<h2>Sophie, 22 <i class="fa fa-star" aria-hidden="true"></i></h2>
+		<h3>New York</h3>
+		<p>Lorem ipsum dolor sit amet consecretur Lorem ipsum dolor sit amet consecretur Lorem ipsum dolor sit amet consecretur Lorem ipsum dolor sit amet consecretur Lorem ipsum dolor sit amet consecretur</p>
+	</div>
+	<button class="add-friend">ADD AS FRIEND</button>
 </body>
-
-<script>
-</script>
-
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="app.js"></script>
 </html>

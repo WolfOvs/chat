@@ -1,0 +1,26 @@
+.header-container {
+    background-color: #3c3c3c;
+    height:95px;
+    color:#fff;
+    text-align:center;
+    padding:25px 0;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .fa-angle-left{
+        color:#fff;
+        font-size: 90px;
+        left: 40px;
+        position: absolute;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-weight:bold;
+        font-size:75px;
+        color:#fff;
+        text-decoration:none;
+    }
+}

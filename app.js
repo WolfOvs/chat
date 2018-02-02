@@ -16,15 +16,12 @@ if ( document.getElementById("textbox")) {
             if(textChatValue.length > 0) {
                 let profileObj = {
                     'avatar':'http://www.alternativenation.net/wp-content/uploads/2017/02/Quentin-Tarantino-1.jpg',
-                    'message': '',
-                    'user': 'me'
+                    'message': ''
                 }
-                
                 messages.push(textChatValue);
                 textChatArray.push(profileObj);
                 textChatArray[textChatArray.length - 1].message = textChatValue;
-
-                checkMessage();
+                console.log(textChatArray);
             }
             if(textChatValue.length > 0) {
                 buildChat();
@@ -42,18 +39,11 @@ if ( document.getElementById("textbox")) {
 function buildChat() {
     var htmlChatMessage = "<div>";
         for (var i = 0; i < textChatArray.length; i++) {
-            if (textChatArray[i].user === 'me') {
-                htmlChatMessage+= "<div class='message-container me'>";
-            } else {
-                htmlChatMessage+= "<div class='message-container you'>";
-            }
+            htmlChatMessage+= "<div class='message-container me'>";
             htmlChatMessage+= "<div class='avatar-container'>";
             htmlChatMessage+= "<div class='avatar'>";
             htmlChatMessage+= "<img src=" + textChatArray[i].avatar + ">";
             htmlChatMessage+="</div>";
-            if (textChatArray[i].user === 'her') {
-            htmlChatMessage+="<div class='flag'></div>";
-            }
             htmlChatMessage+="</div>";
             htmlChatMessage+= "<div class='message-text-container'>";
             htmlChatMessage+= "<div class='text'>" + textChatArray[i].message + "</div>";
@@ -84,19 +74,14 @@ function goToChatPage() {
 
 function checkMessage() {
     let profileObj = {
-        'avatar':'https://avatarfiles.alphacoders.com/522/52255.jpg',
-        'message': '',
-        'user': 'her'
+        'avatar':'http://www.alternativenation.net/wp-content/uploads/2017/02/Quentin-Tarantino-1.jpg',
+        'message': ''
     }
-
-    let str = 'Bien! And you?!';
-
-    if (messages.some(function(v) { 
-      return str.indexOf(v) >= 0; 
-    })) {
-    textChatArray.push(profileObj);
-    textChatArray[textChatArray.length - 1].message = 'Im bored. What you will do this night?!';
-  }
+    if(messages.includes('Bien')) {
+        textChatArray.push(profileObj);
+        textChatArray[textChatArray.length - 1].message = 'What are you doing this night?!';
+    }
+    console.log('donna', textChatArray);
 }
 
 if(addFriendBtn) {
