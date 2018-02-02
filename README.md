@@ -1,6 +1,14 @@
+## How to use CHAT
+
+- First add the Girl with 'ADD TO FRIEND BUTTON'
+- Let's chat with Sophie
+- Try to speak with her...(One suggest, write 'Bien') :)
+
+## Only Vanilla JS
+
 # Simple Gulp with SASS template
 
-This is a very simple document startup template. We have gulp with sass set up. We also have autoprefixer and browserSync installed. There are no unnecessary packages and no meddling with your JS or images.
+This is a very simple document startup template. We have gulp with sass set up. We also have autoprefixer and browserSync installed. There are no unnecessary packages (only fontawesone for icons...) and no meddling with your JS or images.
 
 ## Usage
 The usage is fairly simple. `npm install` and later `gulp watch`.
@@ -25,8 +33,4 @@ All compiled files will compile within the app/css directory, under the same fil
 ## Gulpfile.js
 Gulpfile has not been modified much. Practically on line 1 you are offered an array of SCSS files to compile and that is all there is to it.# chat
 
-## How to use CHAT
 
-- First add the Girl with 'ADD TO FRIEND BUTTON'
-- Let's chat with Sophie
-- Try to speak with her...(One suggest, write 'Bien') :)
