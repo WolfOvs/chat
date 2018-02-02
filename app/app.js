@@ -1,13 +1,13 @@
 
 let textChatArray = [];
 let messages = [];
-
+// retrieve chat history when page is refreshed
 if (localStorage["textChatArray"]) {
     let stored_datas = JSON.parse(localStorage["textChatArray"]);
     textChatArray = stored_datas;
     buildChat();
 }
-
+// send message and build chat
 if ( document.getElementById("textbox")) {
     scrollChatBottom();
     document.getElementById("textbox").onkeyup = function(e){
@@ -19,11 +19,10 @@ if ( document.getElementById("textbox")) {
                     'message': '',
                     'user': 'me'
                 }
-                
+
                 messages.push(textChatValue);
                 textChatArray.push(profileObj);
                 textChatArray[textChatArray.length - 1].message = textChatValue;
-
                 checkMessage();
             }
             if(textChatValue.length > 0) {
@@ -38,7 +37,7 @@ if ( document.getElementById("textbox")) {
         let stored_datas = JSON.parse(localStorage["textChatArray"]);
     };
 }
-
+// build chat history
 function buildChat() {
     var htmlChatMessage = "<div>";
         for (var i = 0; i < textChatArray.length; i++) {
@@ -75,13 +74,13 @@ let addFriendBtn = document.getElementsByClassName("add-friend")[0];
 let bodyTag = document.getElementsByTagName('body')[0];
 
 let isFriend = false;
-
+// change page
 function goToChatPage() {
     if (addFriendBtn.classList.contains("isFriend")) {
         location.href = "chat.html";
     }
 }
-
+// check if message is ok and push a answer
 function checkMessage() {
     let profileObj = {
         'avatar':'https://avatarfiles.alphacoders.com/522/52255.jpg',
@@ -90,7 +89,6 @@ function checkMessage() {
     }
 
     let str = 'Bien! And you?!';
-
     if (messages.some(function(v) { 
       return str.indexOf(v) >= 0; 
     })) {
@@ -98,7 +96,7 @@ function checkMessage() {
     textChatArray[textChatArray.length - 1].message = 'Im bored. What you will do this night?!';
   }
 }
-
+// when you click on 'ADD as Friend' button, colors change, icon heart
 if(addFriendBtn) {
     isFriend = JSON.parse(localStorage.getItem("isFriend"));
     addFriendBtn.addEventListener('click', function(event) {
