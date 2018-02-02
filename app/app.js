@@ -1,4 +1,3 @@
-
 let textChatArray = [];
 let messages = [];
 // retrieve chat history when page is refreshed
@@ -81,13 +80,7 @@ function goToChatPage() {
     }
 }
 
-function arrayContainsArray (superset, subset) {
-    return subset.every(function (value) {
-        return (superset.indexOf(value) >= 0);
-    });
-}
-
-// check if message is ok and push a answer
+// check if message is ok and push an answer
 function checkMessage() {
     let profileObj = {
         'avatar':'https://avatarfiles.alphacoders.com/522/52255.jpg',
@@ -96,7 +89,6 @@ function checkMessage() {
     }
 
     let re = /:\s|,\s|\s/;
-
     let str = 'Bien! And you?!';
     let arrayWords = str.split(re);
 
@@ -110,11 +102,11 @@ function checkMessage() {
     }
 
     if (checkMatchArray.length > 0) {
-    textChatArray.push(profileObj);
-    textChatArray[textChatArray.length - 1].message = 'Im bored. What you will do this night?!';
-    checkMatchArray = [];
-    messages = [];
-  }
+        textChatArray.push(profileObj);
+        textChatArray[textChatArray.length - 1].message = 'Im bored. What you will do this night?!';
+        checkMatchArray = [];
+        messages = [];
+    }
 }
 // when you click on 'ADD as Friend' button, colors change, icon heart
 if(addFriendBtn) {
