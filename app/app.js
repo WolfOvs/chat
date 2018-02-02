@@ -129,6 +129,7 @@ if(addFriendBtn) {
 
     if (isFriend === true) {
         addFriendBtn.classList.add("isFriend");
+        addFriendBtn.innerHTML = "REMOVE AS FRIEND";
         bodyTag.classList.add("isFriend");
     }
 };
