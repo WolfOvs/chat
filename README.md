@@ -2,7 +2,7 @@
 
 - First add the Girl with 'ADD TO FRIEND BUTTON'
 - Let's chat with Sophie
-- Try to speak with her...(One suggest, write 'Bien') :)
+- Try to speak with her...(One suggest, write 'Bien!') :)
 
 ## Only Vanilla JS
 

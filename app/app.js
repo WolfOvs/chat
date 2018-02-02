@@ -80,6 +80,13 @@ function goToChatPage() {
         location.href = "chat.html";
     }
 }
+
+function arrayContainsArray (superset, subset) {
+    return subset.every(function (value) {
+        return (superset.indexOf(value) >= 0);
+    });
+}
+
 // check if message is ok and push a answer
 function checkMessage() {
     let profileObj = {
@@ -88,12 +95,25 @@ function checkMessage() {
         'user': 'her'
     }
 
+    let re = /:\s|,\s|\s/;
+
     let str = 'Bien! And you?!';
-    if (messages.some(function(v) { 
-      return str.indexOf(v) >= 0; 
-    })) {
+    let arrayWords = str.split(re);
+
+    let checkMatchArray = [];
+    for (let i = 0; i < messages.length; i++) {
+        for(let j = 0; j < arrayWords.length; j++) {
+            if(arrayWords[j].indexOf(messages[i]) != -1) {
+                checkMatchArray.push(arrayWords[j]);
+            }
+        }
+    }
+
+    if (checkMatchArray.length > 0) {
     textChatArray.push(profileObj);
     textChatArray[textChatArray.length - 1].message = 'Im bored. What you will do this night?!';
+    checkMatchArray = [];
+    messages = [];
   }
 }
 // when you click on 'ADD as Friend' button, colors change, icon heart
