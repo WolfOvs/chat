@@ -1,5 +1,6 @@
 let textChatArray = [];
 let messages = [];
+
 // retrieve chat history when page is refreshed
 if (localStorage["textChatArray"]) {
     let stored_datas = JSON.parse(localStorage["textChatArray"]);
@@ -78,6 +79,12 @@ function goToChatPage() {
     if (addFriendBtn.classList.contains("isFriend")) {
         location.href = "chat.html";
     }
+}
+
+//count chat height....
+if (document.getElementsByClassName('chat-container')[0]) {
+    let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    document.getElementsByClassName('chat-container')[0].style.height = ((height - 500) + "px");
 }
 
 // check if message is ok and push an answer
